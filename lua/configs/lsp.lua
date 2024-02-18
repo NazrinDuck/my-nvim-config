@@ -33,8 +33,11 @@ masonlsp.setup({
     "emmet_ls",
     "rust_analyzer",
     "bashls",
-    "powershell_es"
-    --"java_language_server",
+    "powershell_es",
+    "java_language_server",
+    "jdtls",
+    "omnisharp",
+    "omnisharp_mono",
   },
 })
 
@@ -44,9 +47,9 @@ nvim_lsp_installer.setup({
     icons = {
       server_installed = "✓",
       server_pending = "➜",
-      server_uninstalled = "✗"
-    }
-  }
+      server_uninstalled = "✗",
+    },
+  },
 })
 
 local protocol = require("vim.lsp.protocol")
@@ -86,6 +89,7 @@ nvim_lsp.tailwindcss.setup({
 
 --C/C++
 nvim_lsp.clangd.setup({
+  root_dir = nvim_lsp.util.root_pattern("make.sh"),
   on_attach = on_attach,
   capabilities = capabilities,
 })
@@ -130,17 +134,15 @@ nvim_lsp.rust_analyzer.setup({
   capabilities = capabilities,
 })
 
---Java
---[[
-nvim_lsp.java_language_server.setup({
+-- nvim_lsp.java_language_server.setup({
+nvim_lsp.jdtls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
---]]
---
---
+
 --Python
 nvim_lsp.pyright.setup({
+  root_dir = nvim_lsp.util.root_pattern("__pycache__"),
   on_attach = on_attach,
   capabilities = capabilities,
 })
@@ -153,6 +155,13 @@ nvim_lsp.powershell_es.setup({
 
 --Bash
 nvim_lsp.bashls.setup({
+  filetypes = { "bash", "zsh", "sh" },
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+--C#
+nvim_lsp.omnisharp_mono.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })

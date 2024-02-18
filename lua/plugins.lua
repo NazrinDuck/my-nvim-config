@@ -71,11 +71,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("onsails/lspkind-nvim")
+	use("onsails/lspkind.nvim")
 	use({
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
-		tag = "v<CurrentMajor>.*",
+		tag = "v2.*",
+		run = "make install_jsregexp",
 	})
 
 	-- cmp: Autocomplete
@@ -227,27 +228,7 @@ return require("packer").startup(function(use)
 			require("configs.notify")
 		end,
 	})
-	use({
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("ibl").setup({
-				exclude = {
-					filetypes = {
-						"dashboard",
-						"help",
-						"startify",
-						"aerial",
-						"alpha",
-						"packer",
-						"neogitstatus",
-						"NvimTree",
-						"neo-tree",
-						"Trouble",
-					},
-				},
-			})
-		end,
-	})
+	use("lukas-reineke/indent-blankline.nvim")
 	use({
 		"hiphish/rainbow-delimiters.nvim",
 		config = function()
@@ -289,45 +270,5 @@ return require("packer").startup(function(use)
 		end,
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
-
-	use({
-		"fgheng/winbar.nvim",
-		config = function()
-			require("winbar").setup({
-				enabled = true,
-
-				show_file_path = true,
-				show_symbols = true,
-
-				colors = {
-					path = "", -- You can customize colors like #c946fd
-					file_name = "",
-					symbols = "",
-				},
-
-				icons = {
-					file_icon_default = "",
-					seperator = ">",
-					editor_state = "●",
-					lock_icon = "",
-				},
-
-				exclude_filetype = {
-					"help",
-					"startify",
-					"dashboard",
-					"packer",
-					"neogitstatus",
-					"NvimTree",
-					"Trouble",
-					"alpha",
-					"lir",
-					"Outline",
-					"spectre_panel",
-					"toggleterm",
-					"qf",
-				},
-			})
-		end,
-	})
+	--winbar
 end)

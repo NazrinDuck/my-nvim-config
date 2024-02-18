@@ -10,10 +10,15 @@ require("plugins")
 --local themeStatus, kanagawa = pcall(require, "kanagawa")
 local themeStatus, tokyonight = pcall(require, "tokyonight")
 
-
 if themeStatus then
-  --vim.cmd("colorscheme kanagawa")
-  vim.cmd("colorscheme tokyonight-moon")
+	--vim.cmd("colorscheme kanagawa")
+	vim.cmd("colorscheme tokyonight-storm")
+--[[
+  --
+	tokyonight.setup({
+		transparent = true,
+	})
+  --]]
 else
-  return
+	return
 end

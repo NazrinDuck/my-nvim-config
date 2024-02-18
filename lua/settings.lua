@@ -7,8 +7,9 @@ vim.scriptencoding = "utf-8"
 global.mapleader = " "
 global.maplocalleader = " "
 global.encoding = "UTF-8"
-global.leetcode_browser = 'chrome'
+global.leetcode_browser = "chrome"
 global.leetcode_china = 1
+-- global.lightline = { "colortheme", "tokyonight" }
 -- Editor options
 --
 
@@ -35,7 +36,7 @@ o.showmatch = true          -- When a bracket is inserted, briefly jump to the m
 o.inccommand =
 "split"                     -- When nonempty, shows the effects of :substitute, :smagic, :snomagic and user commands with the :command-preview flag as you type.
 o.splitbelow = "splitright" -- When on, splitting a window will put the new window below the current one
-o.timeoutlen = 250          -- 250ms for mapping
+o.timeoutlen = 325          -- 325 for mapping
 o.scrolloff = 8
 o.sidescrolloff = 8
 -- 高亮所在行

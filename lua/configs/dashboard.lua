@@ -11,10 +11,12 @@ db.setup({
 		winbar = true, -- hide winbar
 	},
 	preview = {
-		command = "cat | lolcat", -- preview command
-		file_path = "~/.config/nvim/nazrin-duck.cat", -- preview file path
+		command = "cat | lolcat -t -F 0.25", -- preview command
+		--file_path = "~/.config/nvim/nazrin-duck.cat", -- preview file path
+		file_path = "~/.config/nvim/flandre.cat", -- preview file path
 		file_height = 15, -- preview file height
-		file_width = 108, -- preview file width
+		file_width = 83, -- preview file width
+		--file_width = 108,                       -- preview file width
 	},
 	config = {
 		week_header = {
@@ -57,3 +59,20 @@ db.custom_header = {
 }
 ]]
 --
+--
+require("ibl").setup({
+	exclude = {
+		filetypes = {
+			"dashboard",
+			"help",
+			"startify",
+			"aerial",
+			"alpha",
+			"packer",
+			"neogitstatus",
+			"NvimTree",
+			"neo-tree",
+			"Trouble",
+		},
+	},
+})

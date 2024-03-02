@@ -165,3 +165,9 @@ nvim_lsp.omnisharp_mono.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+--PHP
+nvim_lsp.intelephense.setup({
+  root_dir = nvim_lsp.util.root_pattern("index.php"),
+  on_attach = on_attach,
+  capabilities = capabilities,
+})

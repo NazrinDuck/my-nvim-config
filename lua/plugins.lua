@@ -271,4 +271,5 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 	--winbar
+	use("theHamsta/nvim-dap-virtual-text")
 end)

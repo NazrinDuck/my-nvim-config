@@ -1,29 +1,29 @@
 local function map(mode, lhs, rhs)
-  vim.keymap.set(mode, lhs, rhs, { silent = true })
+	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
 local status1, telescope = pcall(require, "telescope.builtin")
 if status1 then
-  -- Telescope
-  map("n", "<leader>ff", telescope.find_files)
-  map("n", "<leader>fg", telescope.live_grep)
-  map("n", "<leader>fb", telescope.buffers)
-  map("n", "<leader>fh", telescope.help_tags)
-  map("n", "<leader>fs", telescope.git_status)
-  map("n", "<leader>fc", telescope.git_commits)
+	-- Telescope
+	map("n", "<leader>ff", telescope.find_files)
+	map("n", "<leader>fg", telescope.live_grep)
+	map("n", "<leader>fb", telescope.buffers)
+	map("n", "<leader>fh", telescope.help_tags)
+	map("n", "<leader>fs", telescope.git_status)
+	map("n", "<leader>fc", telescope.git_commits)
 else
-  print("Telescope not found")
+	print("Telescope not found")
 end
 
 local status2, dap = pcall(require, "dap")
 if status2 then
-  map("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>")
-  map("n", "<leader>dc", "<CMD>lua require'dap'.continue()<CR>")
-  map("n", "<leader>dr", "<CMD>lua require'dap'.repl.open()<CR>")
-  --map("n", "<leader>dp", dap.toggle_breakpoint())
-  --map("n", "<leader>dc", dap.continue())
+	map("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>")
+	map("n", "<leader>dc", "<CMD>lua require'dap'.continue()<CR>")
+	map("n", "<leader>dr", "<CMD>lua require'dap'.repl.open()<CR>")
+--map("n", "<leader>dp", dap.toggle_breakpoint())
+--map("n", "<leader>dc", dap.continue())
 else
-  print("Dap not found")
+	print("Dap not found")
 end
 -- Move
 map("n", "<C-k>", "9k")
@@ -32,7 +32,8 @@ map("n", "<C-j>", "9j")
 map("n", "<leader>w", "<CMD>update<CR>")
 
 -- Quit
-map("n", "<leader>q", "<CMD>q<CR>")
+-- map("n", "<leader>q", "<CMD>q<CR>")
+map("n", "<leader>q", "<CMD>bd<CR>")
 
 -- Exit insert mode
 map("i", "jj", "<ESC>")

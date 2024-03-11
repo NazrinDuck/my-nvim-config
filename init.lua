@@ -6,19 +6,14 @@ require("maps")
 require("settings")
 require("plugins")
 
--- colorscheme config: kanagawa
+-- colorscheme config: night fox
 --local themeStatus, kanagawa = pcall(require, "kanagawa")
-local themeStatus, tokyonight = pcall(require, "tokyonight")
+--local themeStatus, tokyonight = pcall(require, "tokyonight")
+local themeStatus, nightfox = pcall(require, "nightfox")
 
 if themeStatus then
 	--vim.cmd("colorscheme kanagawa")
-	vim.cmd("colorscheme tokyonight-storm")
---[[
-  --
-	tokyonight.setup({
-		transparent = true,
-	})
-  --]]
+	vim.cmd("colorscheme terafox")
 else
 	return
 end

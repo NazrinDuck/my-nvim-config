@@ -155,7 +155,7 @@ nvim_lsp.powershell_es.setup({
 
 --Bash
 nvim_lsp.bashls.setup({
-  filetypes = { "bash", "zsh", "sh" },
+  filetypes = { "bash", "sh" },
   on_attach = on_attach,
   capabilities = capabilities,
 })

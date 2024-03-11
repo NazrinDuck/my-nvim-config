@@ -17,6 +17,8 @@ return require("packer").startup(function(use)
 
 	-- Colorschema
 	use("rebelot/kanagawa.nvim")
+	use("EdenEast/nightfox.nvim")
+	use("folke/tokyonight.nvim")
 
 	-- Statusline
 	use({
@@ -27,6 +29,25 @@ return require("packer").startup(function(use)
 		end,
 		requires = { "nvim-web-devicons" },
 	})
+	use({
+		"nanozuki/tabby.nvim",
+		event = "VimEnter",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		config = function()
+			--require("configs.tabby")
+		end,
+	})
+	-- unused
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "*",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("configs.bufferline")
+		end,
+	})
+	--[[
+]]
 
 	-- Treesitter
 	use({
@@ -198,9 +219,6 @@ return require("packer").startup(function(use)
 	--wakatime
 	use("wakatime/vim-wakatime")
 
-	--tokyonight
-	use("folke/tokyonight.nvim")
-
 	--codeforce
 	use({
 		"yunusey/codeforces-nvim",
@@ -249,15 +267,6 @@ return require("packer").startup(function(use)
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
-		end,
-	})
-
-	use({
-		"akinsho/bufferline.nvim",
-		tag = "*",
-		requires = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("configs.bufferline")
 		end,
 	})
 

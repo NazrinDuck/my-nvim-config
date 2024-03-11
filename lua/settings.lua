@@ -12,7 +12,9 @@ global.leetcode_china = 1
 -- global.lightline = { "colortheme", "tokyonight" }
 -- Editor options
 --
+vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 
+o.showtabline = 2
 o.number = true             -- Print the line number in front of each line
 o.relativenumber = true     -- Show the line number relative to the line with the cursor in front of each line.
 o.clipboard = "unnamedplus" -- uses the clipboard register for all operations except yank.

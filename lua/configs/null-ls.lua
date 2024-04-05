@@ -27,9 +27,7 @@ nls.setup({
 		-- Diagnostics
 		dgn.eslint_d,
 		dgn.rstcheck,
-
 		dgn.cpplint,
-
 		dgn.shellcheck,
 		--[[
     dgn.pylint.with({

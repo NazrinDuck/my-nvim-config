@@ -29,6 +29,7 @@ return require("packer").startup(function(use)
 		end,
 		requires = { "nvim-web-devicons" },
 	})
+	-- unused
 	use({
 		"nanozuki/tabby.nvim",
 		event = "VimEnter",
@@ -37,7 +38,7 @@ return require("packer").startup(function(use)
 			--require("configs.tabby")
 		end,
 	})
-	-- unused
+	-- buffer line
 	use({
 		"akinsho/bufferline.nvim",
 		tag = "*",
@@ -87,6 +88,30 @@ return require("packer").startup(function(use)
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("configs.lsp")
+		end,
+	})
+
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+		config = function()
+			require("flutter-tools").setup({})
+		end,
+	})
+
+	-- LSP outline
+	use({
+		"hedyhli/outline.nvim",
+		config = function()
+			-- Example mapping to toggle outline
+			vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+			require("outline").setup({
+				-- Your setup opts here (leave empty to use defaults)
+			})
 		end,
 	})
 

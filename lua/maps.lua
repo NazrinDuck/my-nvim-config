@@ -25,6 +25,27 @@ if status2 then
 else
 	print("Dap not found")
 end
+-- LSP
+map("n", "gD", vim.lsp.buf.declaration)
+map("n", "gd", vim.lsp.buf.definition)
+map("n", "K", vim.lsp.buf.hover)
+map("n", "gi", vim.lsp.buf.implementation)
+map("n", "<C-o>", vim.lsp.buf.signature_help)
+map("n", "<space>ba", vim.lsp.buf.add_workspace_folder)
+map("n", "<space>br", vim.lsp.buf.remove_workspace_folder)
+map("n", "<space>bl", function()
+	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end)
+map("n", "<space>D", vim.lsp.buf.type_definition)
+map("n", "<space>rn", vim.lsp.buf.rename)
+map("n", "gr", vim.lsp.buf.references)
+map("n", "<space>d", vim.diagnostic.open_float)
+map("n", "[d", vim.diagnostic.goto_prev)
+map("n", "]d", vim.diagnostic.goto_next)
+map("n", "<space>c", vim.diagnostic.setloclist)
+map("n", "ca", vim.lsp.buf.code_action)
+--map("n", "ca", vim.lsp.buf.range_code_action)
+
 -- Move
 map("n", "<C-k>", "9k")
 map("n", "<C-j>", "9j")

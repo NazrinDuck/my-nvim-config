@@ -18,6 +18,10 @@ if not status_masonlsp then
   return
 end
 
+--- new added
+require("luasnip.loaders.from_vscode").lazy_load()
+---
+
 mason.setup({
   PATH = "prepend",
   -- "skip" seems to cause the spawning error

@@ -13,7 +13,7 @@ local themeStatus, nightfox = pcall(require, "nightfox")
 
 if themeStatus then
 	--vim.cmd("colorscheme kanagawa")
-	vim.cmd("colorscheme terafox")
+	vim.cmd("colorscheme carbonfox")
 else
 	return
 end

@@ -117,11 +117,23 @@ return require("packer").startup(function(use)
 
 	use("onsails/lspkind.nvim")
 	use("mfussenegger/nvim-lint")
+
+	-- snippets
+	-- use("rafamadriz/friendly-snippets")
 	use({
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
 		tag = "v2.*",
 		run = "make install_jsregexp",
+
+		requires = {
+			"rafamadriz/friendly-snippets",
+		},
+		--[[
+    config = function()
+      require("luasnip").setup({})
+    end,
+    ]]
 	})
 
 	-- cmp: Autocomplete
@@ -134,11 +146,10 @@ return require("packer").startup(function(use)
 	})
 
 	use("hrsh7th/cmp-nvim-lsp")
-
 	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
-
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-
+	use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
+	-- cmp end
 	-- LSP diagnostics, code actions, and more via Lua.
 	use({
 		"jose-elias-alvarez/null-ls.nvim",

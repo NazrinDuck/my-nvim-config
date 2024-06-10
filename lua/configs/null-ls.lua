@@ -23,12 +23,14 @@ nls.setup({
 		fmt.rustfmt,
 		fmt.clang_format,
 		fmt.pyink,
+		fmt.phpcbf,
 
 		-- Diagnostics
 		dgn.eslint_d,
 		dgn.rstcheck,
 		dgn.cpplint,
 		dgn.shellcheck,
+		dgn.phpstan,
 		--[[
     dgn.pylint.with({
       method = nls.methods.DIAGNOSTICS_ON_SAVE,

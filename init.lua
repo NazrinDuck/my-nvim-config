@@ -12,8 +12,8 @@ require("plugins")
 local themeStatus, nightfox = pcall(require, "nightfox")
 
 if themeStatus then
-	--vim.cmd("colorscheme kanagawa")
-	vim.cmd("colorscheme carbonfox")
+  vim.cmd("colorscheme kanagawa-dragon")
+  --vim.cmd("colorscheme nordfox")
 else
-	return
+  return
 end
